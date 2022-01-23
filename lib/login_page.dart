@@ -19,11 +19,13 @@ class _LoginPageState extends State<LoginPage> {
 
   void _onLogin(BuildContext context) {
     final String email = _emailController.text;
-    final SimpleState state = Provider.of<SimpleState>(context);
+    final SimpleState state = Provider.of<SimpleState>(context, listen: false);
     state.setEmail(email);
 
-    Navigator.pushNamed(context, MAIN_PAGE);
+    Navigator.pushNamed(context, ROOT_PAGE);
   }
+
+  void _onCancel() => exit(0);
 
   @override
   Widget build(BuildContext context) {
@@ -44,13 +46,15 @@ class _LoginPageState extends State<LoginPage> {
                     )),
                 SizedBox(height: 45.0),
                 TextFormField(
+                  key: Key('email'),
                   keyboardType: TextInputType.emailAddress,
-                  initialValue: 'your_name@gmail.com',
+                  controller: _emailController,
                   decoration: InputDecoration(border: OutlineInputBorder()),
                 ),
                 SizedBox(height: 45.0),
                 TextFormField(
-                  initialValue: 'input password',
+                  key: Key('password'),
+                  controller: _passwordController,
                   obscureText: true,
                   decoration: InputDecoration(border: OutlineInputBorder()),
                 ),
@@ -65,9 +69,7 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(height: 10.0),
                     RaisedButton(
                       child: Text('Cancel'),
-                      onPressed: () {
-                        exit(0);
-                      },
+                      onPressed: _onCancel,
                     ),
                   ],
                 ),
