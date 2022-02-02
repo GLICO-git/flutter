@@ -38,16 +38,22 @@ class MainPage extends StatelessWidget {
                     Icons.menu,
                     size: 40,
                   ),
-                  Text('Menu 1'),
+                  Text('MIRN OpenSea'),
                 ]),
               ),
-              Column(children: <Widget>[
-                Icon(
-                  Icons.menu,
-                  size: 40,
-                ),
-                Text('Menu 2'),
-              ]),
+              InkWell(
+                onTap: () async {
+                  await launch('https://www.mitrox.net/blog',
+                      forceWebView: true, forceSafariVC: true);
+                },
+                child: Column(children: <Widget>[
+                  Icon(
+                    Icons.menu,
+                    size: 40,
+                  ),
+                  Text('MIRN BLOG'),
+                ]),
+              ),
               Column(children: <Widget>[
                 Icon(
                   Icons.menu,
@@ -84,14 +90,20 @@ class MainPage extends StatelessWidget {
                 ),
                 Text('Menu 6'),
               ]),
-              Column(children: <Widget>[
-                Image.asset(
-                  'Mitrox_logo.png',
-                  height: 50,
-                  width: 50,
-                ),
-                Text('Menu 7'),
-              ]),
+              Container(
+                width: 40,
+                height: 40,
+                child: Column(children: <Widget>[
+                  SizedBox(
+                    width: 8,
+                    height: 8,
+                    child: Image.asset(
+                      'Mitrox_logo.png',
+                    ),
+                  ),
+                  Text('Menu 7'),
+                ]),
+              ),
               Opacity(
                 opacity: 0.0,
                 child: Column(children: <Widget>[
