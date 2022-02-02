@@ -1,4 +1,4 @@
-package com.higenis.ex1
+package com.example.ex1
 
 import io.flutter.embedding.android.FlutterActivity
 

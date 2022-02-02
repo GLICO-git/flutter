@@ -1,8 +1,4 @@
 //import 'dart:js';
-<<<<<<< HEAD
-=======
-
->>>>>>> 8448f8bcc1e0125bad31e04768953d565007bfc3
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
